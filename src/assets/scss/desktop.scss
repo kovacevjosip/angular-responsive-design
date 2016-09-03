@@ -1,0 +1,101 @@
+@import "icon-font";
+
+body {
+    background: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.my-profile-container {
+    background: white;
+    width: 1024px;
+    margin: auto;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.row {
+    .pic {
+        height: 300px;
+        text-align: center;
+
+        .name {
+            font-weight: 100;
+            text-align: center;
+            background: #eee;
+            color: green;
+        }
+
+        .profile-image {
+            border-radius: 100%;
+            margin: 70px 0px 50px;
+        }
+    }
+    
+    .about {
+        display: flex;
+        
+        .btn {
+            border: 0 none;
+            color: green;
+            height: 60px;
+            width: 50%;
+            margin: 5px 0px;
+            font-weight: 100;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background: green;
+                color: #eee;
+            }
+
+            &.selected {
+                background: green;
+                color: #eee;
+                cursor: text;
+            }
+        }
+    }
+
+    .display {
+        height: 100%;
+        padding: 0px 30px;
+    
+        .detailProfessional, .detailPersonal {
+            position: relative;
+
+            .section {
+                display: flex;
+
+                .divider {
+                    width: 500px;
+
+                    h4 {
+                        font-weight: 300;
+                        color: green;
+                    }
+                }
+            }
+
+        
+            .aboutme {
+                &:first-letter {
+                font-size: 25px;
+                color: green;
+                }
+            }
+        }
+    }
+
+    .footer {
+        background: #eee;
+        text-align: center;
+
+        a {
+            color: green;
+            text-decoration: none;
+            font-weight: 300%;
+        }
+    }
+}

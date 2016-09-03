@@ -1,0 +1,106 @@
+@import "icon-font";
+
+body {
+    background: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    overflow:hidden;
+}
+
+.my-profile-container {
+    background: white;
+    width: 768px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    margin: auto;
+}
+
+.row {
+    height: 100%;
+
+    .pic {
+        text-align: center;
+
+        .name {
+            font-weight: 300;
+            text-align: center;
+            background: #eee;
+            color: green;
+            margin-bottom: 0px;
+        }
+
+        .profile-image {
+            border-radius: 100%;
+        }
+    }
+    
+    .about {
+        display: flex;
+
+        .btn {
+            border: 0 none;
+            color: green;
+            height: 60px;
+            width: 50%;
+            font-weight: 100;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background: green;
+                color: #eee;
+            }
+
+            &.selected {
+                background: green;
+                color: #eee;
+                cursor: text;
+            }
+        }
+    }
+
+    .display {
+        height: 100%;
+        padding: 0px 15px;
+
+        .detailProfessional, .detailPersonal {
+            position: relative;
+        
+            .section {
+                display: flex;
+
+                .divider {
+                    width: 50%;
+
+                    .text {
+                        font-size: 15px;
+                    }
+
+                    h4 {
+                        font-weight: 300;
+                        color: green;
+                        margin: 10px 10px 2px 0;
+                    }
+                }
+            }
+            
+            .aboutme {
+                &:first-letter {
+                    font-size: 25px;
+                    color: green;
+                }
+            }
+        }
+    }
+
+    .footer {
+        background: #eee;
+        text-align: center;
+
+        a {
+            color: green;
+            text-decoration: none;
+            font-weight: 200%;
+        }
+    }
+}
