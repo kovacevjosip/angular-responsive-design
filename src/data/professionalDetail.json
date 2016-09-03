@@ -4,25 +4,39 @@
     "roles": [
         "Web Developer",
         "JavaScript Developer",
-        "Front End"
+        "Front EndLead",
+        "JavaDeveloper"
     ],
     "languages": [
-        "JavaScript"
+        "JavaScript",
+        "Java",
+        "Python",
+        "C#",
+        "Ruby"
     ],
     "webdevelopment": [
         "HTML5",
         "CSS3",
         "AngularJS",
-        "Jquery"
+        "Jquery",
+        "BootStrap",
+        "YUI",
+        "Polymer"
     ],
     "tools": [
         "SASS",
+        "COMPASS",
         "GRUNT",
-        "GIT"
+        "GIT",
+        "GULP",
+        "BOWER",
+        "YEOMAN"
     ],
     "ides": [
-        "Atom",
-        "VS Code"
+        "WebStorm",
+        "Intelij Idea",
+        "Eclipse",
+        "Sublime Text"
     ],
     "social": {
         "linkedin": "-",

@@ -1,0 +1,71 @@
+@import "icon-font";
+
+.largeDevice {
+    color: green;
+    font-size: 4rem;
+    background: #eee;
+    font-weight: 100;
+}
+
+.mediumDevice {
+    color: green;
+    font-size: 2rem;
+    background: #eee;
+    font-weight: 100;
+}
+
+.smallDevice {
+    color: green;
+    font-size: 1rem;
+    background: #eee;
+    font-weight: 300;
+}
+
+.aboutme {
+    &:first-letter {
+        color:green;
+    }
+
+    &.smallPara {
+        font-size: 0.8rem;
+
+        &:first-letter {
+            font-size: 1.6rem;
+        }
+    }
+
+    &.mediumPara{
+        font-size: 1.5rem;
+
+        &:first-letter {
+            font-size: 1.2rem;
+        }
+    }
+
+    &.largePara {
+        font-size: 2rem;
+
+        &:first-letter {
+            font-size: 4rem;
+        }
+    }
+}
+
+.item-list-container{
+    ol{
+        margin-bottom: 2px;
+        font-size:1rem;
+
+        .smallText{
+            font-size:0.8rem;
+        }
+    }
+
+    .show-more{
+        background: none;
+        border: none;
+        cursor: pointer;
+        color:blue;
+        margin-left:10px;
+    }
+}

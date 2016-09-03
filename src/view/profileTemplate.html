@@ -1,46 +1,46 @@
 <div class="my-profile-container">
     <div class="row">
         <div class="pic">
-            <h3 class="name">Sandeep Kumar Patel</h3>
-            <img class="profile-image" src="http://www.gravatar.com/avatar/4205261332ff131e971b48db31dcb528.png" alt="profile image" />
+            <responsive-header targetText="Sandeep Kumar Patel"></responsive-header>
+            <responsive-image imagealt="profile" imagesrc="http://www.gravatar.com/avatar/4205261332ff131e971b48db31dcb528.png"></responsive-image>
         </div>
     </div>
     <div class="row">
-        <div class="footer">
-            <a ng-href='{{ professional.social.twitter }}' class='symbol' title='&#xe286;'></a>
-            <a ng-href='{{ professional.social.facebook }}' class='symbol' title='&#xe227;'></a>
-            <a ng-href='{{ professional.social.linkedin }}' class='symbol' title='&#xe252;'></a>
-            <a ng-href='{{ professional.social.googleplus }}' class='symbol' title='&#xe239;'></a>
+        <div class="about">
+            <button class="btn"
+                    ng-class="{ 'selected': selected }"
+                    ng-model="professional"
+                    ng-click="getDetail($event)"
+                    ng-disabled="selected">
+                Professional
+            </button>
+            <button class="btn"
+                    ng-class="{ 'selected': !selected }"
+                    ng-model="personal"
+                    ng-click="getDetail($event)"
+                    ng-disabled="!selected">
+                Personal
+            </button>
         </div>
     </div>
     <div class="row">
         <div class="display">
             <div class="detailProfessional" ng-show="selected">
-                <p class="aboutme text">
-                    {{ professional.aboutme }}
-                </p>
+                <responsive-paragraph targetPara="{{ professional.aboutme }}"></responsive-paragraph>
                 <div class="section">
                     <div class="divider">
                         <h4>Years of Experience</h4>
                         <span class="text">{{professional.years}}</span>
                         <h4>Job Roles</h4>
-                        <span class="text" ng-repeat="role in professional.roles">
-                            <em ng-if="!first"> </em> {{role}}
-                        </span>
+                        <responsive-list targetlist="professional.roles"></responsive-list>
                         <h4>Languages Known</h4>
-                        <span class="text" ng-repeat="language in professional.languages">
-                            <em ng-if="!first"> </em>{{language}}
-                        </span>
+                        <responsive-list targetlist="professional.languages"></responsive-list>
                     </div>
                     <div class="divider">
                         <h4>Web Technologies</h4>
-                        <span class="text" ng-repeat="webdev in professional.webdevelopment">
-                            <em ng-if="!first"> </em>{{webdev}}
-                        </span>
+                        <responsive-list targetlist="professional.webdevelopment"></responsive-list>
                         <h4> Tools</h4>
-                        <span class="text" ng-repeat="tool in professional.tools">
-                            <em ng-if="!first"> </em>{{tool}}
-                        </span>
+                        <responsive-list targetlist="professional.tools"></responsive-list>
                     </div>
                 </div>
             </div>
@@ -73,21 +73,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="about">
-            <button class="btn"
-                    ng-class="{ 'selected': selected }"
-                    ng-model="professional"
-                    ng-click="getDetail($event)"
-                    ng-disabled="selected">
-                Professional
-            </button>
-            <button class="btn"
-                    ng-class="{ 'selected': !selected }"
-                    ng-model="personal"
-                    ng-click="getDetail($event)"
-                    ng-disabled="!selected">
-                Personal
-            </button>
+        <div class="footer">
+            <a ng-href='{{ professional.social.twitter }}' class='symbol' title='&#xe286;'></a>
+            <a ng-href='{{ professional.social.facebook }}' class='symbol' title='&#xe227;'></a>
+            <a ng-href='{{ professional.social.linkedin }}' class='symbol' title='&#xe252;'></a>
+            <a ng-href='{{ professional.social.googleplus }}' class='symbol' title='&#xe239;'></a>
         </div>
     </div>
 </div>
