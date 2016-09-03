@@ -1,0 +1,26 @@
+{
+  "name": "portfilio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~1.0.0",
+    "grunt-contrib-connect": "~1.0.0",
+    "grunt-contrib-watch": "~1.0.0",
+    "grunt-sass": "~1.2.0"
+  },
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-route": "~1.4.0",
+    "angular-resource": "~1.4.0"
+  }
+}

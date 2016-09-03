@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="profileApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=YES">
+    <title>Responsive Profile Web Application</title>
+
+    <link ng-if="styleType.length > 0" ng-href='assets/css/{{styleType}}.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <!--AngularJS view -->
+    <div ng-view=""></div>
+
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.min.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.min.js"></script>
+    <script src="assets/script/deviceTypeProvider.js"></script>
+    <script src="assets/script/profileController.js"></script>
+    <script src="assets/script/profileService.js"></script>
+    <script src="assets/script/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+    "aboutme": "This is about me section.",
+    "years": 2,
+    "roles": [
+        "Web Developer",
+        "JavaScript Developer",
+        "Front End"
+    ],
+    "languages": [
+        "JavaScript"
+    ],
+    "webdevelopment": [
+        "HTML5",
+        "CSS3",
+        "AngularJS",
+        "Jquery"
+    ],
+    "tools": [
+        "SASS",
+        "GRUNT",
+        "GIT"
+    ],
+    "ides": [
+        "Atom",
+        "VS Code"
+    ],
+    "social": {
+        "linkedin": "-",
+        "facebook": "-",
+        "twitter": "-",
+        "googleplus": "-"
+    },
+    "contact": {
+        "email": "someEmail@gmail.com",
+        "mobile": "+38x-xx-xxxxxx",
+        "address": "Some address"
+    }
+}
