@@ -1,71 +1,115 @@
 @import "icon-font";
 
-.largeDevice {
-    color: green;
-    font-size: 4rem;
-    background: #eee;
-    font-weight: 100;
-}
+// .largeDevice {
+//     color: green;
+//     font-size: 4rem;
+//     background: #eee;
+//     font-weight: 100;
+// }
 
-.mediumDevice {
-    color: green;
-    font-size: 2rem;
-    background: #eee;
-    font-weight: 100;
-}
+// .mediumDevice {
+//     color: green;
+//     font-size: 2rem;
+//     background: #eee;
+//     font-weight: 100;
+// }
 
-.smallDevice {
-    color: green;
-    font-size: 1rem;
-    background: #eee;
-    font-weight: 300;
-}
+// .smallDevice {
+//     color: green;
+//     font-size: 1rem;
+//     background: #eee;
+//     font-weight: 300;
+// }
 
-.aboutme {
+// .aboutme {
+//     &:first-letter {
+//         color:green;
+//     }
+
+//     &.smallPara {
+//         font-size: 0.8rem;
+
+//         &:first-letter {
+//             font-size: 1.6rem;
+//         }
+//     }
+
+//     &.mediumPara{
+//         font-size: 1.5rem;
+
+//         &:first-letter {
+//             font-size: 1.2rem;
+//         }
+//     }
+
+//     &.largePara {
+//         font-size: 2rem;
+
+//         &:first-letter {
+//             font-size: 4rem;
+//         }
+//     }
+// }
+
+// .item-list-container{
+//     ol{
+//         margin-bottom: 2px;
+//         font-size:1rem;
+
+//         .smallText{
+//             font-size:0.8rem;
+//         }
+//     }
+
+//     .show-more{
+//         background: none;
+//         border: none;
+//         cursor: pointer;
+//         color:blue;
+//         margin-left:10px;
+//     }
+// }
+
+p.paragraph { 
     &:first-letter {
-        color:green;
-    }
-
-    &.smallPara {
-        font-size: 0.8rem;
-
+        color: green;
+    } 
+    
+    &.small-screen {
+        font-size: 0.8rem; 
+        
         &:first-letter {
             font-size: 1.6rem;
         }
     }
-
-    &.mediumPara{
-        font-size: 1.5rem;
-
+    
+    &.medium-screen {
+        font-size: 1.2rem;
+        
         &:first-letter {
-            font-size: 1.2rem;
+            font-size: 3rem;
         }
     }
-
-    &.largePara {
+    
+    &.large-screen {
         font-size: 2rem;
-
+        
         &:first-letter {
             font-size: 4rem;
         }
     }
 }
 
-.item-list-container{
-    ol{
-        margin-bottom: 2px;
-        font-size:1rem;
-
-        .smallText{
-            font-size:0.8rem;
-        }
+p.text {
+    &.small-screen {
+        font-size: 0.8rem;
     }
-
-    .show-more{
-        background: none;
-        border: none;
-        cursor: pointer;
-        color:blue;
-        margin-left:10px;
+    
+    &.medium-screen {
+        font-size: 1.2rem;
+    }
+    
+    &.large-screen {
+        font-size: 2rem;
     }
 }

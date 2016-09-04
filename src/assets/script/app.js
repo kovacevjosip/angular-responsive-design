@@ -28,24 +28,16 @@ app.directive('responsiveImage', function (
         },
         template: '<img class="profile-image"' + 'ng-src="{{modifiedsrc}}" alt="{{respalt}}"/>',
         link: function (scope, element, attribute) {
-
-            scope.width = $window.outerWidth;
-            scope.$watch('width', function (newWidth, oldWidth) {
-                $log.log('New width of window : ', newWidth);
-
-                if (newWidth <= 400) {
-                    scope.modifiedsrc = scope.respsrc + "?s=80";
-                } else if (newWidth > 400 && newWidth <= 767) {
-                    scope.modifiedsrc = scope.respsrc + "?s=150";
-                } else {
-                    scope.modifiedsrc = scope.respsrc + "?s=250";
-                }
-            });
-
-            angular.element($window).bind('resize', function () {
-                //Asking AngularJS to run digest cycle
+            scope.$on("breakpointClassChange", function (event, argument) {
+                $log.log("responsiveImage receiving breakpointClassChange ", argument);
                 scope.$apply(function () {
-                    scope.width = $window.outerWidth;
+                    if (angular.equals(argument.styleClass, "large-screen")) {
+                        scope.modifiedsrc = scope.respsrc + "?s=250";
+                    } else if (angular.equals(argument.styleClass, "medium-screen")) {
+                        scope.modifiedsrc = scope.respsrc + "?s=150";
+                    } else if (angular.equals(argument.styleClass, "small-screen")) {
+                        scope.modifiedsrc = scope.respsrc + "?s=80";
+                    }
                 })
             });
         }
@@ -92,21 +84,13 @@ app.directive('responsiveParagraph', function (
         scope: {
             'respPara': '@targetpara'
         },
-        template: "<p class='aboutme {{ paragraphSize }}'> {{ respPara }} </p>",
+        template: "<p class='paragraph {{ paragraphSize }}'> {{ respPara }} </p>",
         link: function (scope, element, attribute) {
-            scope.paragraphSize = 'largePara';
-
-            scope.width = $window.outerWidth;
-            scope.$watch('width', function (newWidth, oldWidth) {
-                if (newWidth <= 400) scope.paragraphSize = 'smallPara'
-                else if (newWidth > 400 && newWidth <= 767) scope.paragraphSize = 'mediumPara';
-                else scope.paragraphSize = 'largePara';
-            });
-
-            angular.element($window).bind('resize', function () {
+            scope.$on('breakpointClassChange', function (event, argument) {
+                $log.log('responsiveParagraph receiving breakpointClassChange ', argument);
                 scope.$apply(function () {
-                    scope.width = $window.outerWidth;
-                });
+                    scope.paragraphSize = argument.styleClass;
+                })
             });
         }
     };
@@ -163,6 +147,91 @@ app.directive('responsiveList', function (
                 scope.itemDisplayList = scope.itemList;
                 scope.isMorePresent = false;
             }
+        }
+    };
+});
+
+app.directive("breakpoint", function (
+    $log,
+    $window,
+    $rootScope,
+    $timeout
+) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attributes) {
+            var breakpointString = attributes.breakpoint,
+                customBreakpoints = angular.fromJson(breakpointString);
+
+            scope.breakpoint = {
+                windowSize: $window.outerWidth,
+                styleClass: ''
+            };
+
+            // Method for broadcast breakpointClassChange event
+            scope.broadcastBreakEvent = function () {
+                $log.log("Broadcasting breakpointClassChange...", scope.breakpoint);
+                $rootScope.$broadcast('breakpointClassChange', scope.breakpoint);
+            }
+
+            // Scope watcher for styleClass property to broadcast breakpointClassChange event
+            scope.$watch('breakpoint.styleClass', function (newStyleClass, oldStyleClass) {
+                if (newStyleClass.length > 0 && newStyleClass !== oldStyleClass) {
+                    $timeout(function () {
+                        scope.broadcastBreakEvent();
+                    });
+                }
+            });
+
+            // Scope watcher for windowSize property to update the new style class
+            scope.$watch('breakpoint.windowSize', function (newSize, oldSize) {
+                var className = 'small-screen',
+                    breakSize,
+                    key;
+
+                for (key in customBreakpoints) {
+                    breakSize = parseInt(key, 10);
+
+                    if (breakSize < newSize) {
+                        className = customBreakpoints[breakSize];
+                    }
+                }
+
+                scope.breakpoint.styleClass = className;
+            });
+
+            // Window resize event updates the windowSize property
+            angular.element($window).bind('resize', function () {
+                scope.$apply(function () {
+                    scope.breakpoint.windowSize = $window.outerWidth;
+                });
+            });
+
+            // For first time page load
+            angular.element(document).ready(function () {
+                $timeout(function () {
+                    scope.broadcastBreakEvent();
+                }, 100);
+            });
+        }
+    };
+});
+
+app.directive("responsiveText", function ($log, $window) {
+    return {
+        restrict: 'E',
+        replace: true,
+        scope: {
+            'respText': '@targettext'
+        },
+        template: "<p class='text {{deviceSize}}'> {{respText}} </p>",
+        link: function (scope, element, attribute) {
+            scope.$on("breakpointClassChange", function (event, argument) {
+                $log.log("responsiveText receiving breakpointClassChange ", argument);
+                scope.$apply(function () {
+                    scope.deviceSize = argument.styleClass;
+                })
+            });
         }
     };
 });
