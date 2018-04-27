@@ -16,11 +16,11 @@
     "grunt": "~1.0.0",
     "grunt-contrib-connect": "~1.0.0",
     "grunt-contrib-watch": "~1.0.0",
-    "grunt-sass": "~1.2.0"
+    "grunt-sass": "~2.1.0"
   },
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-route": "~1.4.0",
-    "angular-resource": "~1.4.0"
+    "angular": "~1.6.0",
+    "angular-route": "~1.6.0",
+    "angular-resource": "~1.6.0"
   }
 }
