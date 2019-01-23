@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
+    const sass = require('node-sass');
 
     grunt.initConfig({
         application: grunt.file.readJSON('package.json'),
@@ -36,6 +37,7 @@ module.exports = function (grunt) {
             // Development
             dev: {
                 options: {
+                    implementation: sass,
                     outputStyle: 'compressed',
                     sourceMap: true,
                     unixNewlines: true,

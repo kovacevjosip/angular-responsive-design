@@ -1,0 +1,11 @@
+p.text{
+  &.small-screen{
+    font-size: 0.8rem;
+  }
+  &.medium-screen{
+    font-size: 1.2rem;
+  }
+  &.large-screen{
+    font-size: 2rem;
+  }
+}

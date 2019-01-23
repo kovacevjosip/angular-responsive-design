@@ -1,0 +1,23 @@
+p.paragraph{
+  &:first-letter {
+    color:green;
+  }
+  &.small-screen{
+    font-size: 0.8rem;
+    &:first-letter {
+      font-size: 1.6rem;
+    }
+  }
+  &.medium-screen{
+    font-size: 1.2rem;
+    &:first-letter {
+      font-size: 3rem;
+    }
+  }
+  &.large-screen{
+    font-size: 2rem;
+    &:first-letter {
+      font-size: 4rem;
+    }
+  }
+}

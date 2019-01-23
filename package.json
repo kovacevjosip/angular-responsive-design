@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "grunt dev"
   },
   "author": "",
   "repository": {
@@ -14,13 +14,14 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "~1.0.0",
-    "grunt-contrib-connect": "~1.0.0",
-    "grunt-contrib-watch": "~1.0.0",
-    "grunt-sass": "~2.1.0"
+    "grunt-contrib-connect": "~2.0.0",
+    "grunt-contrib-watch": "~1.1.0",
+    "grunt-sass": "~3.0.0",
+    "node-sass": "~4.11.0"
   },
   "dependencies": {
-    "angular": "~1.6.0",
-    "angular-route": "~1.6.0",
-    "angular-resource": "~1.6.0"
+    "angular": "~1.7.0",
+    "angular-route": "~1.7.0",
+    "angular-resource": "~1.7.0"
   }
 }

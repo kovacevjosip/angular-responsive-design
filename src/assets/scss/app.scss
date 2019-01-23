@@ -1,115 +1,82 @@
-@import "icon-font";
-
-// .largeDevice {
-//     color: green;
-//     font-size: 4rem;
-//     background: #eee;
-//     font-weight: 100;
-// }
-
-// .mediumDevice {
-//     color: green;
-//     font-size: 2rem;
-//     background: #eee;
-//     font-weight: 100;
-// }
-
-// .smallDevice {
-//     color: green;
-//     font-size: 1rem;
-//     background: #eee;
-//     font-weight: 300;
-// }
-
-// .aboutme {
-//     &:first-letter {
-//         color:green;
-//     }
-
-//     &.smallPara {
-//         font-size: 0.8rem;
-
-//         &:first-letter {
-//             font-size: 1.6rem;
-//         }
-//     }
-
-//     &.mediumPara{
-//         font-size: 1.5rem;
-
-//         &:first-letter {
-//             font-size: 1.2rem;
-//         }
-//     }
-
-//     &.largePara {
-//         font-size: 2rem;
-
-//         &:first-letter {
-//             font-size: 4rem;
-//         }
-//     }
-// }
-
-// .item-list-container{
-//     ol{
-//         margin-bottom: 2px;
-//         font-size:1rem;
-
-//         .smallText{
-//             font-size:0.8rem;
-//         }
-//     }
-
-//     .show-more{
-//         background: none;
-//         border: none;
-//         cursor: pointer;
-//         color:blue;
-//         margin-left:10px;
-//     }
-// }
-
-p.paragraph { 
-    &:first-letter {
-        color: green;
-    } 
-    
-    &.small-screen {
-        font-size: 0.8rem; 
-        
-        &:first-letter {
-            font-size: 1.6rem;
+// @import "icon-font";
+@import "responsive-paragraph";
+@import "responsive-header";
+@import "responsive-list";
+@import "responsive-text";
+body {
+  background: #eee;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  overflow-x:hidden;
+  .my-profile-container {
+    background: white;
+    width: 90%;
+    margin: auto;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+    .row {
+      .pic {
+        text-align: center;
+        padding: 0 0 20px;
+        .profile-image {
+          border-radius: 100%;
+          -o-border-radius: 100%;
         }
-    }
-    
-    &.medium-screen {
-        font-size: 1.2rem;
-        
-        &:first-letter {
-            font-size: 3rem;
-        }
-    }
-    
-    &.large-screen {
-        font-size: 2rem;
-        
-        &:first-letter {
-            font-size: 4rem;
-        }
-    }
-}
+      }
+      .about {
+        display: flex;
+        .btn {
+          border: 0 none;
+          color: green;
+          height: 60px;
+          width: 50%;
+          margin: 5px 0px;
+          font-weight: 100;
+          font-size: 16px;
+          cursor: pointer;
+          &:hover {
+            background: green;
+            color: #eee;
+          }
+          &.selected {
+            background: green;
+            color: #eee;
+            cursor: text;
+          }
 
-p.text {
-    &.small-screen {
-        font-size: 0.8rem;
+        }
+      }
+      .display {
+        height: 100%;
+        padding: 0px 10px;
+        .detailProfessional, .detailPersonal {
+          .section {
+            display: flex;
+            .divider {
+              width: 50%;
+              &:first-child{
+                margin-right:10px;
+              }
+              h4 {
+                font-weight: 300;
+                color: green;
+                margin:0px;
+              }
+            }
+          }
+          position: relative;
+          padding: 2px;
+        }
+      }
+      .footer {
+        background: #eee;
+        text-align: center;
+        a {
+          color: green;
+          text-decoration: none;
+          font-weight: 300%;
+        }
+      }
     }
-    
-    &.medium-screen {
-        font-size: 1.2rem;
-    }
-    
-    &.large-screen {
-        font-size: 2rem;
-    }
+  }
 }
